@@ -15,9 +15,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return 'hello, world'
-
-if __name__ == '__main__':
-    app.run()# -*- coding: utf-8 -*-
 from flask import Flask
 
 
@@ -31,9 +28,6 @@ app = Flask(__name__,static_folder='static')
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
-if __name__ == '__main__':
-    app.run(port=8080)
 
 def allwed_file(filename):
     # .があるかどうかのチェックと、拡張子の確認
@@ -82,3 +76,6 @@ def uploads_file():
             </form>
         </body>
     '''
+
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0', port=8080)
